@@ -1,0 +1,179 @@
+.poly {
+    width: 200px;
+    position: relative;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: show 500ms ease 150ms forwards;
+}
+.paper,
+.scissors,
+.rock,
+.lizard,
+.spock {
+    border: solid 0.9em;
+    border-radius: 50%;
+    background-color: rgb(231, 218, 218);    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 46%;
+    color: transparent;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0;
+    transform-origin: 0% 0%;
+    transform: scale(0.9) translateX(-50%);
+    position: absolute;
+    display: inline-block;
+    opacity: 0;
+    animation: show 500ms ease 100ms forwards;
+}
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.paperOut,
+.scissorsOut,
+.rockOut,
+.lizardOut,
+.spockOut {
+    border: solid 0.9em;
+    border-radius: 50%;
+    background-color: rgb(231, 218, 218);    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 46%;
+    color: transparent;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0;
+    transform-origin: 50% 0%;
+    transform: scale(1);
+    margin-top: 10vh;
+    opacity: 0;
+    animation: show 500ms ease 100ms forwards;
+}
+.emptyChoice {
+    border: solid 0.9em;
+    border-radius: 50%;
+    background-color: hsl(229, 25%, 31%); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 46%;
+    color: transparent;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0;
+    transform-origin: 50% 0%;
+    transform: scale(1);
+    margin-top: 10vh;
+    border-color: none;  
+}
+.paper:hover,
+.scissors:hover,
+.rock:hover,
+.lizard:hover,
+.spock:hover,
+.paperOut:hover,
+.scissorsOut:hover,
+.rockOut:hover,
+.lizardOut:hover,
+.spockOut:hover,
+.emptyChoice:hover {
+    cursor: pointer;
+}
+.playerResult {
+    margin-left: 0px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    grid-column: 1;
+}
+.pcResult {
+    margin-right: 0px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    grid-column: 2;
+}
+.paper, .paperOut {
+    background-image: url("../public/images/icon-paper.svg");
+    border-color: hsl(230, 89%, 62%);
+}
+
+.scissors, .scissorsOut {
+    background-image: url("../public/images/icon-scissors.svg");
+    border-color: hsl(39, 89%, 49%);
+}
+.rock, .rockOut {
+    background-image: url("../public/images/icon-rock.svg");
+    border-color: hsl(349, 71%, 52%);
+}
+.lizard, .lizardOut {
+    background-image: url("../public/images/icon-lizard.svg");
+    border-color: hsl(261, 73%, 60%);
+}
+.spock, .spockOut {
+    background-image: url("../public/images/icon-spock.svg");
+    border-color: hsl(189, 59%, 53%);
+}
+.winnerBkg {
+    box-shadow: 0 0 0 0.9em hsla(0, 0%, 55%, 0.1), 
+    0 0 0 1.8em hsla(0, 0%, 50%, 0.1), 
+    0 0 0 2.7em hsla(0, 0%, 45%, 0.1);
+}
+@media screen and (min-width: 500px) {    
+    .paperOut,
+    .scissorsOut,
+    .rockOut,
+    .lizardOut,
+    .spockOut {
+        transform: scale(1.2);
+    }
+    .emptyChoice {
+        transform: scale(1.2);
+    }
+    .playerResult h5,
+    .pcResult h5 {
+        margin-top: 40px;
+        font-size: large;
+    }
+}
+@media screen and (min-width: 1026px) {
+    .poly {
+        top: 25vh;
+        transform: translateX(-50%) scale(1.7);
+    }
+    .paper,
+    .scissors,
+    .rock,
+    .lizard,
+    .spock {    
+        transform: scale(1.2) translateX(-50%);
+    }
+    .paper {
+        transform-origin: -300px 200%;
+    }
+    .scissors {
+        transform-origin: 0% 475px;
+    }
+    .rock {
+        transform-origin: -150px -100px;
+    }
+    .lizard {
+        transform-origin: 150px -100px;
+    }
+    .spock {
+        transform-origin: 300px 200%;
+    }
+    .pcResult {
+        grid-column: 3/4;
+    }
+}
