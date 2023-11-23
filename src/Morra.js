@@ -71,8 +71,10 @@ class Morra extends React.Component {
             this.setState({pcValue: pcValueRandomResult});
         },1000);        
         if (value === pcValueRandomResult) {            
+               setTimeout(()=> {
                 this.win('DRAW');
                 this.setState({ gameover: true, winner: '' });
+            }, 2000);
         } else if (
           (value === 'Paper' && pcValueRandomResult === 'Rock') ||
           (value === 'Paper' && pcValueRandomResult === 'Spock') ||
